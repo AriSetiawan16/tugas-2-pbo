@@ -1,6 +1,3 @@
-print("============= TUGAS_2 PBO =============")
-print("<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>")
-
 # Membuat Kelas Mahasiswa.
 class Mahasiswa:
 

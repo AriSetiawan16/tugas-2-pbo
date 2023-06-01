@@ -1,0 +1,120 @@
+print("============= TUGAS_2 PBO =============")
+print("<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>")
+
+# Membuat Kelas Mahasiswa.
+class Mahasiswa:
+
+# Konstruktor _init_ berfungsi untuk menginisialisasi 
+# objek mahasiswa dengan atribut seperti Nama dan NIM.
+    def _init_(self, Nama, NIM):
+        self.Nama = Nama
+        self.NIM = NIM
+
+# Tampilkan_Info digunakan untuk mencetak informasi Nama dan NIM mahasiswa.
+    def Tampilkan_Info(self):
+        print("Nama:", self.Nama)
+        print("NIM:", self.NIM)
+
+
+# Membuat Kelas Jurusan.
+class Jurusan:
+
+# Konstruktor _init_ berfungsi untuk menginisialisasi objek jurusan dengan atribut nama_jurusan.
+# Daftar_Mahasiswa merupakan list untuk menyimpan objek mahasiswa yang terdaftar dalam jurusan.
+    def _init_(self, Nama_Jurusan):
+        self.Nama_Jurusan = Nama_Jurusan
+        self.Daftar_Mahasiswa = []
+
+# Tambah_Mahasiswa berfungsi untuk menambahkan objek mahasiswa ke dalam daftar mahasiswa pada jurusan.
+    def Tambah_Mahasiswa(self, Mahasiswa):
+        self.Daftar_Mahasiswa.append(Mahasiswa)
+
+# Tampilkan_Daftar_Mahasiswa digunakan untuk mencetak daftar mahasiswa yang terdaftar dalam jurusan, 
+# Termasuk Nama dan NIM masing-masing mahasiswa.
+    def Tampilkan_Daftar_Mahasiswa(self):
+        print("Daftar Mahasiswa di Jurusan", self.Nama_Jurusan)
+        for Mahasiswa in self.Daftar_Mahasiswa:
+            print("~ Nama :", Mahasiswa.Nama)
+            print("  NIM  :", Mahasiswa.NIM)
+
+
+# Membuat Kelas Universitas. 
+class Universitas:
+
+# Konstruktor _init_ digunakan untuk menginisialisasi objek universitas dengan atribut Nama_Universitas
+# Atribut daftar_jurusan merupakan list untuk menyimpan objek jurusan yang terdapat dalam Universitas
+    def _init_(self, Nama_Universitas):
+        self.Nama_Universitas = Nama_Universitas
+        self.Daftar_Jurusan = []
+
+# Tambah_Jurusan berfungsi untuk menambahkan objek jurusan ke dalam daftar jurusan pada Universitas
+    def Tambah_Jurusan(self, Jurusan):
+        self.Daftar_Jurusan.append(Jurusan)
+
+# Tampilkan_Daftar_Jurusan berfungsi untuk mencetak daftar jurusan yang
+# terdapat dalam Universitas, termasuk Nama jurusannya
+    def Tampilkan_Daftar_Jurusan(self):
+        print("Daftar Jurusan di Universitas", self.Nama_Universitas)
+        for Jurusan in self.Daftar_Jurusan:
+            print("~ Nama Jurusan :", Jurusan.Nama_Jurusan)
+
+
+# Membuat objek Universitas dengan nama "XYZ University"
+Universitas_xyz = Universitas("XYZ University")
+
+# Membuat objek Jurusan "Teknik Informatika" dan daftar mahasiswa
+Jurusan_Teknik_Informatika = Jurusan("Teknik Informatika")
+Mahasiswa_1 = Mahasiswa("Ari Setiawan", "G1A022012")
+Jurusan_Teknik_Informatika.Tambah_Mahasiswa(Mahasiswa_1)
+
+# Membuat objek Jurusan "Hukum" dan daftar mahasiswa
+Jurusan_Hukum = Jurusan("Hukum")
+Mahasiswa_3 = Mahasiswa("Arief dwi syahputra", "B1A002013")
+Mahasiswa_4 = Mahasiswa("Nanta", "B1A021020")
+Mahasiswa_5 = Mahasiswa("rizky", "B1A022078")
+Jurusan_Hukum.Tambah_Mahasiswa(Mahasiswa_3)
+Jurusan_Hukum.Tambah_Mahasiswa(Mahasiswa_4)
+Jurusan_Hukum.Tambah_Mahasiswa(Mahasiswa_5)
+
+# Membuat objek Jurusan "Manajemen" dan daftar mahasiswa
+Jurusan_Manajemen = Jurusan("Manajemen")
+Mahasiswa_5 = Mahasiswa("Afifah", "C1B022130")
+Mahasiswa_6 = Mahasiswa("Ferdy", "C1B022130")
+Jurusan_Manajemen.Tambah_Mahasiswa(Mahasiswa_5)
+Jurusan_Manajemen.Tambah_Mahasiswa(Mahasiswa_6)
+
+# Membuat objek Jurusan "Kedokteran" dan daftar mahasiswa
+Jurusan_Kedokteran = Jurusan("Kedokteran")
+Mahasiswa_5 = Mahasiswa("Joshua","H1A022004")
+Mahasiswa_6 = Mahasiswa("dimas","H1A022053")
+Mahasiswa_7 = Mahasiswa("Kevin","H1A022058")
+Jurusan_Kedokteran.Tambah_Mahasiswa(Mahasiswa_5)
+Jurusan_Kedokteran.Tambah_Mahasiswa(Mahasiswa_6)
+Jurusan_Kedokteran.Tambah_Mahasiswa(Mahasiswa_7)
+
+
+# Menambahkan jurusan ke dalam Universitas
+Universitas_xyz.Tambah_Jurusan(Jurusan_Teknik_Informatika)
+Universitas_xyz.Tambah_Jurusan(Jurusan_Hukum)
+Universitas_xyz.Tambah_Jurusan(Jurusan_Manajemen)
+Universitas_xyz.Tambah_Jurusan(Jurusan_Kedokteran)
+
+# Menampilkan daftar jurusan di Universitas
+Universitas_xyz.Tampilkan_Daftar_Jurusan()
+print("===============================================")
+
+# Menampilkan daftar mahasiswa di Jurusan "Teknik Informatika"
+Jurusan_Teknik_Informatika.Tampilkan_Daftar_Mahasiswa()
+print("===============================================")
+
+# Menampilkan daftar mahasiswa di Jurusan "Hukum"
+Jurusan_Hukum.Tampilkan_Daftar_Mahasiswa()
+print("===============================================")
+
+# Menampilkan daftar mahasiswa di Jurusan "Manajemen"
+Jurusan_Manajemen.Tampilkan_Daftar_Mahasiswa()
+print("===============================================")
+
+# Menampilkan daftar mahasiswa di Jurusan "Kedokteran"
+Jurusan_Kedokteran.Tampilkan_Daftar_Mahasiswa()
+print("===============================================")
